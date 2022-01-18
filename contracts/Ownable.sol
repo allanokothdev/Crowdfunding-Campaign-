@@ -1,14 +1,16 @@
 pragma solidity ^0.5.0;
 
 contract Ownable {
-  address admin;
 
-  modifier onlyOwner() {
-    require(msg.sender == admin);
-    _;
-  }
+    address admin;
 
-  constructor Ownable (){
-    admin = msg.sender;
-  }
+    constructor() public {
+
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == admin);
+        _;
+    }
+
 }
